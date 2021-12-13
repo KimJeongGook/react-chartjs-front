@@ -11,6 +11,7 @@ function LineChart() {
                 labels: [2018, 2019, 2020, 2021, 2022],
                 datasets: [
                     {
+                        label: "연도별 버스 이용량 통계",
                         data: [1, 4, 2, 6, 9]
                     }
                 ]
