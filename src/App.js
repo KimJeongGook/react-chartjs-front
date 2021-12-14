@@ -8,6 +8,7 @@ import StackdBarChartWithGroups from './components/BarChart/StackdBarChartWithGr
 import FloatingBarChart from './components/BarChart/FloatingBarChart';
 import BarChartBoarderRadius from './components/BarChart/BarChartBoarderRadius';
 import MultiAxisLineChart from './components/LineChart/MultiAxisLineChart';
+import SteppedLineChart from './components/LineChart/SteppedLineChart';
 
 function App() {
   const data = [50, 40, 30, 35, 40];
@@ -23,7 +24,7 @@ function App() {
       <FloatingBarChart data={data} labels={labels} />
       <BarChartBoarderRadius data={data} labels={labels} />
       <MultiAxisLineChart data={data} labels={labels} />
-      
+      <SteppedLineChart data={data} labels={labels} />
     </Layout>
   );
 }
