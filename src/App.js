@@ -5,6 +5,7 @@ import StackedBarChart from './components/BarChart/StackedBarChart';
 
 import Layout from './components/Layout';
 import StackdBarChartWithGroups from './components/BarChart/StackdBarChartWithGroups';
+import FloatingBarChart from './components/BarChart/FloatingBarChart';
 
 function App() {
   const data = [50, 40, 30, 35, 40];
@@ -17,6 +18,7 @@ function App() {
       <HorizontalBarChart data={data} labels={labels} />
       <StackedBarChart data={data} labels={labels} />
       <StackdBarChartWithGroups data={data} labels={labels} />
+      <FloatingBarChart data={data} labels={labels} />
     </Layout>
   );
 }
