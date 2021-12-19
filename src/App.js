@@ -10,11 +10,17 @@ import BarChartBoarderRadius from './components/BarChart/BarChartBoarderRadius';
 import MultiAxisLineChart from './components/LineChart/MultiAxisLineChart';
 import SteppedLineChart from './components/LineChart/SteppedLineChart';
 
+import './App.css';
+
 function App() {
   const data = [50, 40, 30, 35, 40];
   const labels = [2017, 2018, 2019, 2020, 2021];
 
   return (
+    <>
+    <div className='App'>
+      <h1>대구광역시 버스노선별 시간대별 승하차 인원정보(2019년)</h1>
+    </div>
     <Layout>
       <LineChart data={data} labels={labels} />
       <VerticalBarChart data={data} labels={labels} />
@@ -26,6 +32,7 @@ function App() {
       <MultiAxisLineChart data={data} labels={labels} />
       <SteppedLineChart data={data} labels={labels} />
     </Layout>
+    </>
   );
 }
 
