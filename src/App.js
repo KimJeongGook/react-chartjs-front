@@ -80,10 +80,10 @@ function App() {
         <h1>대구광역시 버스노선별 시간대별 승하차 인원정보(2019년)</h1>
       </div>
       <Layout>
+        <VerticalBarChart monthBasePassenger={monthBasePassenger} />
         <HorizontalBarChart monthBasePassenger={monthBasePassenger} />
-
-        <LineChart data={data} labels={labels} />
-        <VerticalBarChart data={data} labels={labels} />
+       
+        <LineChart data={data} labels={labels} />        
         <StackedBarChart data={data} labels={labels} />
         <StackdBarChartWithGroups data={data} labels={labels} />
         <FloatingBarChart data={data} labels={labels} />
