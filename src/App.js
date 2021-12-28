@@ -88,8 +88,7 @@ function App() {
         <LineChart monthBasePassenger={monthBasePassenger} />    
         <SteppedLineChart monthBasePassenger={monthBasePassenger} />
 
-        <MultiAxisLineChart data={data} labels={labels} />
-        <SteppedLineChart data={data} labels={labels} />
+        <MultiAxisLineChart monthBasePassenger={monthBasePassenger} />
       </Layout>
     </>
   );

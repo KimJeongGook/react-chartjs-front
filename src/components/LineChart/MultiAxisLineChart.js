@@ -2,32 +2,51 @@ import Chart from "chart.js/auto";
 import { useEffect, useRef } from "react";
 
 function MultiAxisLineChart (props) {
-    const {data, labels} = props
+    const { monthBasePassenger: mp } = props
     const canvasDom = useRef(null)
     useEffect( () => {
         const ctx = canvasDom.current.getContext('2d')
         const multiAxisLineChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: labels,
+                labels: mp.map((row) => (row.month)),
                 datasets: [
                     {
-                        data: data,
+                        label: '월별 버스 승하차 이용량(y)',
+                        data: mp.map((row) => (row.data.sum)),
                         yAxisID: 'y',
                         borderColor: 'rgba(244,53,32,0.5)',
                         backgroundColor: 'rgba(244,53,32,0.7)',
                     },
                     {
-                        data: data.map((number) => {
-                            return number % 4;
-                        }),
+                        label: '월별 버스 승차(y1)',
+                        data: mp.map((row) => (row.data.getIn)), 
+                        yAxisID: 'y1',
+                        borderColor: 'rgba(53,244,32,0.5)',
+                        backgroundColor: 'rgba(53,244,32,0.7)',
+                    },
+                    {
+                        label: '월별 버스 하차(y1)',
+                        data: mp.map((row) => (row.data.getOff)), 
                         yAxisID: 'y1',
                         borderColor: 'rgba(53,32,244,0.5)',
-                        backgroundColor: 'rgba(54,32,244,0.7)',
+                        backgroundColor: 'rgba(53,32,244,0.7)',
                     }
                 ]
             },
             options: {
+                responsive: true,
+                interaction: {
+                mode: 'index',
+                intersect: false,
+                },
+                stacked: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Multi Axis Line Chart'
+                    }
+                },
                 scales: {
                     y: {
                         type: 'linear',
@@ -38,7 +57,10 @@ function MultiAxisLineChart (props) {
                     y1: {
                         type: 'linear',
                         display: true,
-                        position: 'right'
+                        position: 'right',
+                        grid: {
+                            drawOnChartArea: false, // only want the grid lines for one axis to show up
+                          },
                     }
                 }
             }
@@ -47,7 +69,7 @@ function MultiAxisLineChart (props) {
         return () => {
             multiAxisLineChart.destroy();
         }
-    }, []);
+    }, [mp]);
     return (
         <div>
             <canvas ref={canvasDom}/>
