@@ -2,17 +2,21 @@ import Chart from "chart.js/auto";
 import { useEffect, useRef } from "react";
 
 function SteppedLineChart (props) {
-    const {data, labels} = props
+    const { monthBasePassenger: mp } = props;
+
     const canvasDom = useRef(null)
     useEffect( () => {
         const ctx = canvasDom.current.getContext('2d')
         const steppedLineChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: labels,
+                labels: mp.map((row) => (row.month)),
                 datasets: [
                     {
-                        data: data,
+                        label: '월별 버스 승하차 이용량',
+                        data: mp.map((row) => (row.data.sum)),
+                        borderColor: 'rgba(244,53,32,0.5)',
+                        backgroundColor: 'rgba(244,53,32,0.7)',
                         stepped: true,
                     }
                 ]
@@ -25,7 +29,7 @@ function SteppedLineChart (props) {
         return () => {
             steppedLineChart.destroy();
         }
-    }, []);
+    }, [mp]);
     return (
         <div>
             <canvas ref={canvasDom}/>

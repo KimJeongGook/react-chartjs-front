@@ -86,11 +86,8 @@ function App() {
         <StackedBarChart monthBasePassenger={monthBasePassenger} />
        
         <LineChart monthBasePassenger={monthBasePassenger} />    
+        <SteppedLineChart monthBasePassenger={monthBasePassenger} />
 
-        <StackedBarChart data={data} labels={labels} />
-        <StackdBarChartWithGroups data={data} labels={labels} />
-        <FloatingBarChart data={data} labels={labels} />
-        <BarChartBoarderRadius data={data} labels={labels} />
         <MultiAxisLineChart data={data} labels={labels} />
         <SteppedLineChart data={data} labels={labels} />
       </Layout>
