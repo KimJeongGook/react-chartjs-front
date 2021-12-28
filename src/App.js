@@ -44,7 +44,7 @@ function App() {
         const sum = Number(cur['합계'])
         const type = cur['구분']
 
-        console.log(type);
+        // console.log(type);
         if (!acc.has(month)) {
           acc.set(month, {
             sum: 0,
@@ -83,7 +83,8 @@ function App() {
         <VerticalBarChart monthBasePassenger={monthBasePassenger} />
         <HorizontalBarChart monthBasePassenger={monthBasePassenger} />
        
-        <LineChart data={data} labels={labels} />        
+        <LineChart monthBasePassenger={monthBasePassenger} />    
+
         <StackedBarChart data={data} labels={labels} />
         <StackdBarChartWithGroups data={data} labels={labels} />
         <FloatingBarChart data={data} labels={labels} />
