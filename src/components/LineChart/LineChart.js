@@ -14,10 +14,19 @@ function LineChart(props) {
                     {
                         label: '월별 버스 승하차 이용량',
                         data: mp.map((row) => (row.data.sum)),
-                        backgroundColor: 'rgba(255,0,0,0.3)',
+                        borderColor: 'rgba(244,53,32,0.5)',
+                        backgroundColor: 'rgba(244,53,32,0.7)',
                     },
                 ]
-            }
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Line Chart'
+                    }
+                },
+            },
         });
         return () => {
             lineChart.destroy();

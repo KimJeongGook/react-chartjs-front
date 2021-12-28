@@ -21,7 +21,7 @@ function StackdBarChartWithGroups(props) {
                         stack: 'Group 0'
                     },
                     {
-                        label: '월별 버스 승하',
+                        label: '월별 버스 승차',
                         data: mp.map((row) => (row.data.getIn)),
                         backgroundColor: 'rgba(0,255,0,0.3)',
                         stack: 'Group 1'
@@ -47,6 +47,10 @@ function StackdBarChartWithGroups(props) {
                     intersect: false,
                 },
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Stackd Bar Chart with Groups'
+                    },
                     legend: {
                       position: "bottom",
                     },

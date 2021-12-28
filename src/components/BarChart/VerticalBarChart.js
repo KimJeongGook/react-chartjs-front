@@ -31,6 +31,10 @@ function VerticalBarChart(props) {
             },
             options: {
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Vertical Bar Chart'
+                    },
                   legend: {
                     // display: false,
                     position: "bottom",

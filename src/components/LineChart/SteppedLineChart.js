@@ -22,6 +22,12 @@ function SteppedLineChart (props) {
                 ]
             },
             options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Stepped Line Chart'
+                    }
+                },
                 interaction: false,
                 axis: 'x',
             }

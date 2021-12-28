@@ -39,6 +39,10 @@ function StackedBarChart(props) {
                     }
                 },
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Stacked Bar Chart'
+                    },
                     legend: {
                       position: "bottom",
                     },

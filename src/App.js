@@ -15,9 +15,6 @@ import axios from 'axios';
 import { useEffect, useCallback, useState } from 'react';
 
 function App() {
-  const data = [50, 40, 30, 35, 40];
-  const labels = [2017, 2018, 2019, 2020, 2021];
-
   const [csv, setCsv] = useState([]);
   const [monthBasePassenger, setMonthBasePassenger] = useState([])
 
@@ -77,19 +74,19 @@ function App() {
   return (
     <>
       <div className='App'>
-        <h1>대구광역시 버스노선별 시간대별 승하차 인원정보(2019년)</h1>
+        <h1>대구광역시 시내버스 월별 승하차 인원정보(2019년)</h1>
       </div>
       <Layout>
         <VerticalBarChart monthBasePassenger={monthBasePassenger} />
         <HorizontalBarChart monthBasePassenger={monthBasePassenger} />
+        <StackedBarChart monthBasePassenger={monthBasePassenger} />
         <StackdBarChartWithGroups monthBasePassenger={monthBasePassenger} />
         <FloatingBarChart monthBasePassenger={monthBasePassenger} />
         <BarChartBoarderRadius monthBasePassenger={monthBasePassenger} />
-       
-        <LineChart monthBasePassenger={monthBasePassenger} />    
-        <SteppedLineChart monthBasePassenger={monthBasePassenger} />
 
+        <LineChart monthBasePassenger={monthBasePassenger} />    
         <MultiAxisLineChart monthBasePassenger={monthBasePassenger} />
+        <SteppedLineChart monthBasePassenger={monthBasePassenger} />
       </Layout>
     </>
   );

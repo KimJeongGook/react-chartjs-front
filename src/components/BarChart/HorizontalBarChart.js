@@ -33,6 +33,10 @@ function HorizontalBarChart(props) {
             options: {
                 indexAxis: "y",
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Horizontal Bar Chart'
+                    },
                     legend: {
                         position: "bottom",
                     },
