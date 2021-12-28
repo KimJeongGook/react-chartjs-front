@@ -83,6 +83,7 @@ function App() {
         <VerticalBarChart monthBasePassenger={monthBasePassenger} />
         <HorizontalBarChart monthBasePassenger={monthBasePassenger} />
         <StackdBarChartWithGroups monthBasePassenger={monthBasePassenger} />
+        <StackedBarChart monthBasePassenger={monthBasePassenger} />
        
         <LineChart monthBasePassenger={monthBasePassenger} />    
 
